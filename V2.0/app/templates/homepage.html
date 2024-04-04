@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<style type="text/css">
+  h1{color:white;text-align:center;margin-left:5%;-webkit-text-stroke:1px #828282;}
+  h3{color:whitesmoke;text-align:center;}
+  h4{height: 20px;line-height: 20px;margin-top: 10px;width: 100%;color: #02ad94;font-size: 18px;font-weight: bold;text-align: center;}
+  .i{text-align:center;margin:auto;margin-top:1%;margin-bottom:5%;height: 86px;width: 400px;background-color: rgba(255, 255, 255, 0.8);padding: 10px 20px 10px 20px;border-radius: 6px;}  .selectbox{text-align:center;}
+  body{background: url("../static/back.png")}
+  form{position: relative;width: 460px;height: 460px;background-color: rgba(251, 251, 251, 0.8);border: 1px solid #fff;border-radius: 4px;font-size: 20px;background-color: #08548f;font-weight: bold;color:white;text-align: center;}
+  input{font-size: 18px;}
+  select{font-size: 18px;}
+  #button1{margin-top: 15px;width: 80px;height: 30px;font-size: 14px;color: black;background:white;border: 2px solid #fff !important;font-weight: bold !important;}
+  .row{margin: 0 auto; margin-top: 5%;text-align:center;font-size: 24px;padding: 20px 50px; background-color:rgb(0, 81, 255);font-weight: bold;}
+  .container{overflow:hidden;width: 460px;height: 460px;padding: 16px;background-color: rgba(251, 251, 251, 0.6);border: 1px;margin-top: 30px;border-radius: 4px;margin: auto;text-align: center;}
+  .put{background-color: #fff; overflow-y:visible; width: 405px;height: 100px;font-size: 14px;font-family: Microsoft YaHei, sans-serif;border:0; border-radius: 5px; position: absolute; right: 12px; box-shadow: 1px 1px  6px  #a5dee4}
+  textarea{
+    height: auto;
+  }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>算经解释器</title>
+    <div class="i">
+      <img src="../static/logo.png"/>
+      <h1 >2024计算机设计大赛</h1>
+    </div> 
+</head>
+<body>
+  <div class="container">
+    <form method="post">
+      <h3 id="t2">算经解释器: 用户界面1.0</h3>
+      <h4>Chou Bi Suan Ching</h4>
+      <label style="position:absolute; left:20px; padding: 7px">问题：</label><br><br>
+      <textarea type='text' class="put" style="position:absolute; left:20px; padding: 7px" name="question" id="question" placeholder="请根据算经格式输入你想问的问题" required></textarea>
+      <input style="position:absolute; left:40%; top:65%;padding: 7px" id="button1" type="submit" value="提交">
+      <!-- Show the Results -->
+      <label style="position:absolute; left:20px;top:75%; padding: 7px">答案：</label><br><br>
+      <div style="position:absolute; left:20px; top:80%;height:200px;width:400px;margin:0 auto;">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+           {% for message in messages %}
+                <p>{{ message }}</p>
+           {% endfor %}
+        {% endif %}
+    {% endwith %}
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
+
